@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./src/style/index.css">
+  <link rel="stylesheet" href="./src/style/animate.css">
+  <title>NUPT SACC</title>
+</head>
+
+<body>
+  <div id="root" class="animated bounce">
+    <header>
+      <div class="navigation">
+        <logo class="logo">
+          <image class="logo-image" src="./src/img/logo.png"></image>
+        </logo>
+        <!-- <div class="slogan">{{slogan}}</div> -->
+        <div class="navigation-list">
+          <div v-for="list in navigationList">{{list}}</div>
+        </div>
+      </div>
+      <div class="full-name">
+        <div>Science Association of Computer College</div>
+      </div>
+    </header>
+    <main></main>
+    <department></department>
+    <footer></footer>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="./src/index.js"></script>
+  <script>
+    var app = new Vue({
+      el: '#root',
+      data: {
+        slogan: `SACC`,
+        navigationList: [`首页`,`科协人`, `竞赛实践`, `关于我们`],
+      }
+    })
+  </script>
+</body>
+
+</html>
