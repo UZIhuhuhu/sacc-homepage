@@ -9,21 +9,121 @@ body #root {
   height: 100vh;
 }
 
-body #root header {
-  background-image: url("../img/background1.jpg");
-  background-size: 100%;
-  display: block;
-  height: 100vh;
+body #root .navigation-shadow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  color: #ffffff;
+  width: 100%;
+  z-index: 999;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#3e4343), to(rgba(179, 174, 186, 0.47)));
+  background-image: linear-gradient(180deg, #3e4343 0%, rgba(179, 174, 186, 0.47) 100%);
+  -webkit-transition: all .3s ease-out 0s;
+  transition: all .3s ease-out 0s;
 }
 
-body #root header .logo {
+body #root .navigation-shadow .slogan {
+  padding: 0.75rem;
+  margin-left: 4rem;
+  font-size: 200%;
+}
+
+body #root .navigation-shadow .slogan:hover {
+  color: #2196f3;
+}
+
+body #root .navigation-shadow .navigation-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-right: 4rem;
+  font-size: 120%;
+}
+
+body #root .navigation-shadow .navigation-list div {
+  margin-right: 0.75rem;
+}
+
+body #root .navigation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  color: #ffffff;
+  width: 100%;
+  z-index: 999;
+  -webkit-transition: all .3s ease-out 0s;
+  transition: all .3s ease-out 0s;
+}
+
+body #root .navigation .slogan {
+  padding: 0.75rem;
+  margin-left: 4rem;
+  font-size: 200%;
+}
+
+body #root .navigation .slogan:hover {
+  color: #2196f3;
+}
+
+body #root .navigation .navigation-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-right: 4rem;
+  font-size: 120%;
+}
+
+body #root .navigation .navigation-list div {
+  margin-right: 0.75rem;
+}
+
+body #root .logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 0.75rem;
   margin-left: 4rem;
 }
 
-body #root header .logo .logo-image {
+body #root .logo .logo-image {
   height: 64px;
   width: 64px;
+  margin-right: 1rem;
+}
+
+body #root .logo div {
+  font-size: 150%;
+}
+
+body #root header {
+  background-image: url("../img/background1.jpg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  display: block;
+  height: 100vh;
 }
 
 body #root header .full-name {
@@ -42,52 +142,105 @@ body #root header .full-name {
   z-index: 999;
 }
 
-body #root header .navigation {
+body #root department {
+  display: block;
+  height: 100vh;
+  width: 100%;
+  background-color: #f8fafe;
+}
+
+body #root department .navigation-font {
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  color: #ffffff;
-}
-
-body #root header .navigation .slogan {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   padding: 0.75rem;
-  margin-left: 4rem;
   font-size: 200%;
 }
 
-body #root header .navigation .slogan:hover {
-  color: #2196f3;
-}
-
-body #root header .navigation .navigation-list {
+body #root department .depart-container {
+  margin: 2rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-right: 4rem;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body #root department .depart-container .group {
+  display: block;
+  width: 360px;
+  height: 272px;
+  margin: 1.2rem;
+  -webkit-transition: all .3s ease-out 0s;
+  transition: all .3s ease-out 0s;
+  background: #fff;
+}
+
+body #root department .depart-container .group .group-detail-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body #root department .depart-container .group .group-detail-title div {
+  font-size: 150%;
+  padding: 0.75rem;
+}
+
+body #root department .depart-container .group .group-detail-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body #root department .depart-container .group .group-detail-content div {
   font-size: 120%;
+  padding: 0.75rem;
 }
 
-body #root header .navigation .navigation-list div {
-  margin-right: 0.75rem;
+body #root department .depart-container .group:hover {
+  -webkit-transform: translate(-10px, -10px);
+          transform: translate(-10px, -10px);
+  -webkit-box-shadow: 10px 10px 0px rgba(84, 48, 132, 0.06);
+          box-shadow: 10px 10px 0px rgba(84, 48, 132, 0.06);
 }
 
-body #root main {
+body #root department .depart-container .group:focus {
+  -webkit-transform: translate(-10px, -10px);
+          transform: translate(-10px, -10px);
+  -webkit-box-shadow: 10px 10px 0px rgba(84, 48, 132, 0.06);
+          box-shadow: 10px 10px 0px rgba(84, 48, 132, 0.06);
+}
+
+body #root department .depart-container .group:active {
+  -webkit-transform: translate(-10px, -10px);
+          transform: translate(-10px, -10px);
+  -webkit-box-shadow: 10px 10px 0px rgba(84, 48, 132, 0.06);
+          box-shadow: 10px 10px 0px rgba(84, 48, 132, 0.06);
+}
+
+body #root activity {
   display: block;
   height: 100vh;
   width: 100%;
 }
 
-body #root department {
+body #root history {
   display: block;
   height: 100vh;
   width: 100%;

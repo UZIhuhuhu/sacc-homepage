@@ -11,36 +11,41 @@
 </head>
 
 <body>
-  <div id="root" class="animated bounce">
-    <header>
-      <div class="navigation">
-        <logo class="logo">
-          <image class="logo-image" src="./src/img/logo.png"></image>
-        </logo>
-        <!-- <div class="slogan">{{slogan}}</div> -->
-        <div class="navigation-list">
-          <div v-for="list in navigationList">{{list}}</div>
-        </div>
+  <div id="root">
+    <div v-if="" :class="navigationShadow ? 'navigation-shadow' : 'navigation'">
+      <logo class="logo">
+        <image class="logo-image" src="./src/img/logo.png"></image>
+        <div>SACC</div>
+      </logo>
+      <!-- <div class="slogan">{{slogan}}</div> -->
+      <div class="navigation-list">
+        <div v-for="(list,index) in navigationList" :key="index" @click="changeDistance">{{list}}</div>
       </div>
+    </div>
+    <header>
       <div class="full-name">
         <div>Science Association of Computer College</div>
       </div>
     </header>
-    <main></main>
-    <department></department>
-    <footer></footer>
+    <department>
+      <div class="navigation-font">
+        部门介绍
+      </div>
+      <div class="depart-container">
+        <div class="group" v-if="departMentAppear" v-for="item in departMent">
+          <div class="group-detail-title">
+            <div>{{item.name}}</div>
+          </div>
+          <div class="group-detail-content">
+            <div>{{item.detail}}</div>
+          </div>
+        </div>
+      </div>
+    </department>
+    <activity></activity>
+    <history></history>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="./src/index.js"></script>
-  <script>
-    var app = new Vue({
-      el: '#root',
-      data: {
-        slogan: `SACC`,
-        navigationList: [`首页`,`科协人`, `竞赛实践`, `关于我们`],
-      }
-    })
-  </script>
 </body>
-
 </html>
