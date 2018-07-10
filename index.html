@@ -26,10 +26,8 @@
     <header>
       <div class="header-container">
         <div>
-          <div>计算机学院、软件学院计算机科学与技术协会</div>
-        </div>
-        <div>
-          <slogan>计算机的世界只有0和1，我们很单纯，但我们不简单。 加入我们，一切从Hello World开始。</slogan>
+          <div class="animated jackInTheBox">{{societyName}}</div>
+          <slogan class="animated jackInTheBox">{{slogan}}</slogan>
         </div>
       </div>
     </header>
@@ -48,8 +46,16 @@
         </div>
       </div>
     </department>
-    <activity></activity>
-    <history></history>
+    <activity>
+      <div class="navigation-font">
+        活动通知
+      </div>
+    </activity>
+    <history>
+      <div class="navigation-font">
+        科协历届
+      </div>
+    </history>
     <contactUs>
       <div class="contact-container">
         <div class="contact-group">
@@ -57,17 +63,17 @@
             <div>
               <img :class="qrcodeStatus ? 'animated flipInX' : 'animated flipOutX'" src="./src/img/chat-group.png" alt="">
             </div>
-            <div @mouseover="qrcodeDisplay" @mouseout="qrcodeDisappear">科协交流群: 93125629</div>
+            <div :class="contactStatus ? 'animated fadeInUp' : 'animated fadeOutDown'" @mouseover="qrcodeDisplay" @mouseout="qrcodeDisappear">科协交流群: 93125629</div>
           </div>
           <div class="qrcode">
             <div>
               <img :class="qrcodeStatus2 ? 'animated flipInX' : 'animated flipOutX'" src="./src/img/qrcode.jpg" alt="">
             </div>
-            <div @mouseover="qrcodeDisplay2" @mouseout="qrcodeDisappear2">微信公众号: nuptsacc</div>
+            <div :class="contactStatus ? 'animated fadeInUp' : 'animated fadeOutDown'" @mouseover="qrcodeDisplay2" @mouseout="qrcodeDisappear2">微信公众号: nuptsacc</div>
           </div>
         </div>
         <div class="copyright">
-          Copyright ©️2017-2018 计软院科协 blog.nuptsacc.com
+            Copyright © 2018 yellowDog. All Rights Reserved.
         </div>
       </div>
     </contactUs>

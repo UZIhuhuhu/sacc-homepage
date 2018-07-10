@@ -1,14 +1,13 @@
 //TODO:
 // 页面切图
-// 导航到页面的时候,距离渐进改变
-// 距离改变的时候, 导航栏出现shadow
 // 索引的hover效果
 // 响应式
 var app = new Vue({
   el: "#root",
   data: {
-    slogan: `SACC`,
-    navigationList: [`首页`, `部门介绍`, `活动通知`, `科协人`, `联系我们`],
+    societyName: `计算机学院、软件学院计算机科学与技术协会`,
+    slogan: `计算机的世界只有0和1，我们很单纯，但我们不简单。 加入我们，一切从Hello World开始。`,
+    navigationList: [`首页`, `部门介绍`, `活动通知`, `科协历届`, `联系我们`],
     departMent: [
       {
         name: `前端组`,
@@ -49,6 +48,9 @@ var app = new Vue({
     //导航栏的阴影
     navigationShadow: false,
 
+    //contact
+    contactStatus: false,
+
     //qrcode
     qrcodeStatus: false,
     qrcodeStatus2: false
@@ -64,12 +66,15 @@ var app = new Vue({
         this.departMentAppear = false;
       }
       //导航栏加上阴影
-      if (this.topDistance >= 886) {
-        this.navigationShadow = true;
-      } else {
-        this.navigationShadow = false;
-      }
-      // console.log(this.topDistance);
+      this.topDistance >= 886
+        ? (this.navigationShadow = true)
+        : (this.navigationShadow = false);
+
+      //联系方式的fade
+      this.topDistance >= 3270
+        ? (this.contactStatus = true)
+        : (this.contactStatus = false);
+      console.log(this.topDistance);
     },
     //导航栏 => 改变到顶部的距离
     //100vh == 976px
@@ -81,7 +86,7 @@ var app = new Vue({
         this.calculateDistance(976);
       } else if (text === `活动通知`) {
         this.calculateDistance(976 * 2);
-      } else if (text === `科协人`) {
+      } else if (text === `科协历届`) {
         this.calculateDistance(976 * 3);
       } else if (text === `联系我们`) {
         this.calculateDistance(976 * 3.5);

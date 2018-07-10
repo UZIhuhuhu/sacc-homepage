@@ -132,19 +132,27 @@ body #root header .header-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
-body #root department {
-  display: block;
-  height: 100vh;
-  width: 100%;
-  background-color: #f8fafe;
+body #root header .header-container div {
+  text-align: center;
+  font-size: 200%;
+  margin-bottom: 1rem;
+  color: #ffffff;
 }
 
-body #root department .navigation-font {
+body #root header .header-container slogan {
+  display: block;
+  color: #ffffff;
+}
+
+body #root .navigation-font {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -154,6 +162,13 @@ body #root department .navigation-font {
           justify-content: center;
   padding: 0.75rem;
   font-size: 200%;
+}
+
+body #root department {
+  display: block;
+  height: 100vh;
+  width: 100%;
+  background-color: #f8fafe;
 }
 
 body #root department .depart-container {
