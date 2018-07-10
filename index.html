@@ -8,11 +8,12 @@
   <link rel="stylesheet" href="./src/style/index.css">
   <link rel="stylesheet" href="./src/style/animate.css">
   <title>NUPT SACC</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 
 <body>
   <div id="root">
-    <div v-if="" :class="navigationShadow ? 'navigation-shadow' : 'navigation'">
+    <div :class="navigationShadow ? 'navigation-shadow animated lightSpeedIn' : 'navigation'">
       <logo class="logo">
         <image class="logo-image" src="./src/img/logo.png"></image>
         <div>SACC</div>
@@ -23,8 +24,13 @@
       </div>
     </div>
     <header>
-      <div class="full-name">
-        <div>Science Association of Computer College</div>
+      <div class="header-container">
+        <div>
+          <div>计算机学院、软件学院计算机科学与技术协会</div>
+        </div>
+        <div>
+          <slogan>计算机的世界只有0和1，我们很单纯，但我们不简单。 加入我们，一切从Hello World开始。</slogan>
+        </div>
       </div>
     </header>
     <department>
@@ -32,7 +38,7 @@
         部门介绍
       </div>
       <div class="depart-container">
-        <div class="group" v-if="departMentAppear" v-for="item in departMent">
+        <div :class="departMentAppear ? 'group animated fadeInUp' : 'group animated fadeOutDown'" v-for="item in departMent">
           <div class="group-detail-title">
             <div>{{item.name}}</div>
           </div>
@@ -44,8 +50,29 @@
     </department>
     <activity></activity>
     <history></history>
+    <contactUs>
+      <div class="contact-container">
+        <div class="contact-group">
+          <div class="qrcode">
+            <div>
+              <img :class="qrcodeStatus ? 'animated flipInX' : 'animated flipOutX'" src="./src/img/chat-group.png" alt="">
+            </div>
+            <div @mouseover="qrcodeDisplay" @mouseout="qrcodeDisappear">科协交流群: 93125629</div>
+          </div>
+          <div class="qrcode">
+            <div>
+              <img :class="qrcodeStatus2 ? 'animated flipInX' : 'animated flipOutX'" src="./src/img/qrcode.jpg" alt="">
+            </div>
+            <div @mouseover="qrcodeDisplay2" @mouseout="qrcodeDisappear2">微信公众号: nuptsacc</div>
+          </div>
+        </div>
+        <div class="copyright">
+          Copyright ©️2017-2018 计软院科协 blog.nuptsacc.com
+        </div>
+      </div>
+    </contactUs>
   </div>
-  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="./src/index.js"></script>
 </body>
+
 </html>

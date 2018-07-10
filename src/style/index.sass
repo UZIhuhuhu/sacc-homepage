@@ -48,7 +48,7 @@ body
       width: 100%
       z-index: 999
       transition: all .3s ease-out 0s
-      
+
       .slogan
         padding: 0.75rem
         margin-left: 4rem
@@ -80,15 +80,12 @@ body
       background-repeat: no-repeat
       display: block
       height: 100vh
-      
-      .full-name
+
+      .header-container
         width: 100%
         height: 100%
         display: flex
-        justify-content: center
         align-items: center
-        font-size: 300%
-        z-index: 999
 
     //部门介绍页面
     department
@@ -153,3 +150,51 @@ body
       display: block
       height: 100vh
       width: 100%
+
+    //联系我们 && Copyright
+    contactUs
+      display: block
+      height: 50vh
+      width: 100%
+
+      .contact-container
+        width: 100%
+        height: 100%
+
+        .contact-group
+         display: flex
+         width: 100%
+         height: 95%
+         justify-content: center
+         align-items: center
+         background-color: #f8fafe
+
+        div
+            font-size: 120%
+            display: block
+            margin-right: 2rem
+        
+        .qrcode
+
+          div
+            display: flex
+            justify-content: center
+
+        img
+          width: 120px
+          height: 120px
+          display: inline-block
+          padding-bottom: 2rem
+        
+        .img-disappear
+          visibility: hidden
+
+        .copyright
+          height: 5%
+          display: flex
+          justify-content: center
+          align-items: center
+          font-size: 100%
+      
+
+    
