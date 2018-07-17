@@ -5,6 +5,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- Required meta tags
+  <meta content="initial-scale=1, shrink-to-fit=no, width=device-width" name="viewport">
+
+  <!-- Add Material CSS, replace Bootstrap CSS -->
+  <!-- <link href="css/material.min.css" rel="stylesheet"> -->
   <link rel="stylesheet" href="./src/style/index.css">
   <link rel="stylesheet" href="./src/style/animate.css">
   <title>NUPT SACC</title>
@@ -13,21 +18,24 @@
 
 <body>
   <div id="root">
-    <div :class="navigationShadow ? 'navigation-shadow animated lightSpeedIn' : 'navigation'">
+    <div :class="navigationShadow ? 'navigation-shadow' : 'navigation'">
       <logo class="logo">
         <image class="logo-image" src="./src/img/logo.png"></image>
         <div>SACC</div>
       </logo>
       <!-- <div class="slogan">{{slogan}}</div> -->
       <div class="navigation-list">
-        <div v-for="(list,index) in navigationList" :key="index" @click="changeDistance">{{list}}</div>
+        <div class="nav-name">
+          <div v-for="(list,index) in navigationList" :key="index" @click="changeDistance">{{list}}</div>
+        </div>
+        <img class="nav-menu" src='./src/img/menu.png'></img>
       </div>
     </div>
     <header>
       <div class="header-container">
         <div>
-          <div class="animated jackInTheBox">{{societyName}}</div>
-          <slogan class="animated jackInTheBox">{{slogan}}</slogan>
+          <div class="society-name animated fadeInUp">{{societyName}}</div>
+          <slogan class="animated fadeInUp animate-delay">{{slogan}}</slogan>
         </div>
       </div>
     </header>
@@ -50,6 +58,20 @@
       <div class="navigation-font">
         活动通知
       </div>
+      <!--轮播图-->
+      <carousel>
+        <div class="carousel-container">
+          <div class="activity-pic">
+            <image src="./src/img/activity/13.jpg"></image>
+          </div>
+          <div class="activity-content">
+            <div class="activity-title">这是标题</div>
+          </div>
+          <div>
+            <div class="activity-detail">这是内容啊啊啊啊啊啊啊啊啊啊 啊啊啊啊啊啊</div>
+          </div>
+        </div>
+      </carousel>
     </activity>
     <history>
       <div class="navigation-font">
@@ -63,17 +85,19 @@
             <div>
               <img :class="qrcodeStatus ? 'animated flipInX' : 'animated flipOutX'" src="./src/img/chat-group.png" alt="">
             </div>
-            <div :class="contactStatus ? 'animated fadeInUp' : 'animated fadeOutDown'" @mouseover="qrcodeDisplay" @mouseout="qrcodeDisappear">科协交流群: 93125629</div>
+            <div class="contact-content" :class="contactStatus ? 'animated fadeInUp' : 'animated fadeOutDown'" @mouseover="qrcodeDisplay"
+              @mouseout="qrcodeDisappear">科协交流群: 93125629</div>
           </div>
           <div class="qrcode">
             <div>
               <img :class="qrcodeStatus2 ? 'animated flipInX' : 'animated flipOutX'" src="./src/img/qrcode.jpg" alt="">
             </div>
-            <div :class="contactStatus ? 'animated fadeInUp' : 'animated fadeOutDown'" @mouseover="qrcodeDisplay2" @mouseout="qrcodeDisappear2">微信公众号: nuptsacc</div>
+            <div class="contact-content" :class="contactStatus ? 'animated fadeInUp' : 'animated fadeOutDown'" @mouseover="qrcodeDisplay2"
+              @mouseout="qrcodeDisappear2">微信公众号: nuptsacc</div>
           </div>
         </div>
         <div class="copyright">
-            Copyright © 2018 yellowDog. All Rights Reserved.
+          Copyright © 2018 yellowDog. All Rights Reserved.
         </div>
       </div>
     </contactUs>

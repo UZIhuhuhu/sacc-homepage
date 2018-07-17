@@ -60,7 +60,7 @@ var app = new Vue({
     handleScroll: function() {
       this.topDistance = document.documentElement.scrollTop;
       //>220 => 部门的出现
-      if (this.topDistance >= 220 && this.topDistance <= 1400) {
+      if (this.topDistance >= 220) {
         this.departMentAppear = true;
       } else {
         this.departMentAppear = false;
@@ -144,3 +144,4 @@ var app = new Vue({
     // window.addEventListener("mouseover",this.qrcodeDisplay);
   }
 });
+

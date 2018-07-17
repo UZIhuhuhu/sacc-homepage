@@ -4,9 +4,134 @@
   font-family: -apple-system-font, Helvetica Neue, Helvetica, sans-serif;
 }
 
+@media (min-width: 375px) and (max-width: 768px) {
+  .nav-name div {
+    display: none;
+  }
+  .nav-menu {
+    margin-right: 2rem;
+    width: 32px;
+    height: 32px;
+  }
+  .header-container .society-name {
+    font-size: 150%;
+  }
+  .header-container slogan {
+    font-size: 120%;
+  }
+  .group {
+    width: 300px;
+  }
+}
+
+@media (max-width: 375px) {
+  .nav-name div {
+    display: none;
+  }
+  .nav-menu {
+    margin-right: 2rem;
+    width: 32px;
+    height: 32px;
+  }
+  .header-container .society-name {
+    font-size: 110%;
+  }
+  .header-container slogan {
+    font-size: 80%;
+  }
+  .group {
+    width: 300px;
+  }
+}
+
+@media (min-width: 972px) {
+  .nav-menu {
+    display: none;
+    margin: 2rem;
+  }
+  .header-container .society-name {
+    font-size: 300%;
+  }
+  .header-container slogan {
+    font-size: 150%;
+  }
+  .group {
+    width: 300px;
+  }
+}
+
+@media (max-width: 972px) and (min-width: 769px) {
+  .nav-menu {
+    display: none;
+    margin-right: 2rem;
+  }
+  .header-container .society-name {
+    font-size: 200%;
+  }
+  .header-container slogan {
+    font-size: 150%;
+  }
+  .depart-container {
+    height: 1216px;
+  }
+  .group {
+    width: 300px;
+  }
+}
+
+@media (min-width: 1658px) {
+  .group {
+    width: 360px;
+  }
+}
+
+@media (max-width: 728px) {
+  .depart-container {
+    height: 2432px;
+  }
+  .group {
+    width: 360px;
+  }
+}
+
+@media (min-width: 1058px) and (max-width) {
+  .depart-container {
+    height: 912px;
+  }
+  .group {
+    width: 360px;
+  }
+}
+
+@media (max-width: 577px) and (min-width: 409px) {
+  .contact-content {
+    font-size: 120%;
+  }
+}
+
+@media (max-width: 409px) {
+  .contac-content {
+    font-size: 100%;
+  }
+}
+
+@media (min-width: 577px) {
+  .contact-content {
+    font-size: 150%;
+  }
+}
+
+body {
+  width: 100vw;
+}
+
 body #root {
   width: 100%;
-  height: 100vh;
+}
+
+body #root .animate-delay {
+  -webkit-transition-delay: 1s;
+          transition-delay: 1s;
 }
 
 body #root .navigation-shadow {
@@ -46,12 +171,23 @@ body #root .navigation-shadow .navigation-list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-right: 4rem;
+  margin-right: 2rem;
   font-size: 120%;
 }
 
-body #root .navigation-shadow .navigation-list div {
+body #root .navigation-shadow .navigation-list .nav-name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body #root .navigation-shadow .navigation-list .nav-name div {
   margin-right: 0.75rem;
+}
+
+body #root .navigation-shadow .navigation-list img {
+  width: 32px;
+  height: 32px;
 }
 
 body #root .navigation {
@@ -89,12 +225,26 @@ body #root .navigation .navigation-list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-right: 4rem;
+  margin-right: 2rem;
   font-size: 120%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-body #root .navigation .navigation-list div {
+body #root .navigation .navigation-list .nav-name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body #root .navigation .navigation-list .nav-name div {
   margin-right: 0.75rem;
+}
+
+body #root .navigation .navigation-list img {
+  width: 32px;
+  height: 32px;
 }
 
 body #root .logo {
@@ -105,7 +255,7 @@ body #root .logo {
       -ms-flex-align: center;
           align-items: center;
   padding: 0.75rem;
-  margin-left: 4rem;
+  margin-left: 2rem;
 }
 
 body #root .logo .logo-image {
@@ -142,7 +292,6 @@ body #root header .header-container {
 
 body #root header .header-container div {
   text-align: center;
-  font-size: 200%;
   margin-bottom: 1rem;
   color: #ffffff;
 }
@@ -162,17 +311,17 @@ body #root .navigation-font {
           justify-content: center;
   padding: 0.75rem;
   font-size: 200%;
+  color: #3b393e;
 }
 
 body #root department {
   display: block;
-  height: 100vh;
   width: 100%;
   background-color: #f8fafe;
 }
 
 body #root department .depart-container {
-  margin: 2rem;
+  margin: 2rem 2rem 0 2rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -187,9 +336,8 @@ body #root department .depart-container {
 
 body #root department .depart-container .group {
   display: block;
-  width: 360px;
   height: 272px;
-  margin: 1.2rem;
+  margin: 1rem;
   -webkit-transition: all .3s ease-out 0s;
   transition: all .3s ease-out 0s;
   background: #fff;
@@ -250,6 +398,40 @@ body #root activity {
   width: 100%;
 }
 
+body #root activity carousel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: calc(100vh - 69px);
+}
+
+body #root activity carousel .carousel-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 2rem;
+}
+
+body #root activity carousel .carousel-container .activity-pic {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 50%;
+}
+
+body #root activity carousel .carousel-container .activity-pic img {
+  width: 100%;
+}
+
 body #root history {
   display: block;
   height: 100vh;
@@ -283,8 +465,10 @@ body #root contactUs .contact-container .contact-group {
 }
 
 body #root contactUs .contact-container div {
-  font-size: 120%;
   display: block;
+}
+
+body #root contactUs .contact-container .qrcode:nth-child(1) {
   margin-right: 2rem;
 }
 

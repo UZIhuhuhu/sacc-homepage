@@ -3,12 +3,109 @@
   padding: 0
   font-family: -apple-system-font, Helvetica Neue, Helvetica, sans-serif
 
-body
+$font-black: #3b393e
+
+//导航栏和首页的响应式 768px iPad
+@media(min-width: 375px) and (max-width: 768px)
+  .nav-name
+    div
+      display: none
+
+  .nav-menu
+      margin-right: 2rem
+      width: 32px
+      height: 32px
   
+  .header-container
+    .society-name
+      font-size: 150%
+    slogan
+      font-size: 120%
+  .group
+    width: 300px
+//iPhone
+@media(max-width: 375px)
+  .nav-name
+    div
+      display: none
+  .nav-menu
+    margin-right: 2rem
+    width: 32px
+    height: 32px
+
+  .header-container
+    .society-name
+      font-size: 110%
+    slogan
+      font-size: 80%
+
+  .group
+    width: 300px
+@media(min-width: 972px)
+  .nav-menu
+    display: none
+    margin: 2rem
+
+  .header-container
+    .society-name
+      font-size: 300%
+    slogan
+      font-size: 150%
+  .group
+    width: 300px
+@media (max-width: 972px) and (min-width: 769px)
+  .nav-menu
+      display: none
+      margin-right: 2rem
+
+  .header-container
+    .society-name
+      font-size: 200%
+    slogan
+      font-size: 150% 
+  //div的长度 1216px
+  .depart-container
+    height: 1216px
+  .group
+    width: 300px
+//部门介绍的响应式
+@media(min-width: 1658px)
+
+  .group
+    width: 360px
+    // margin: 1rem
+@media(max-width: 728px)
+  //div的高 2432px
+  .depart-container
+    height: 2432px
+  .group
+    width: 360px
+@media(min-width: 1058px) and (max-width)
+  //div的高 912px
+  .depart-container
+    height: 912px
+  .group
+    width: 360px
+//577px 二维码的响应式
+@media(max-width: 577px) and (min-width: 409px)
+  .contact-content
+    font-size: 120%
+@media(max-width: 409px)
+  .contac-content
+    font-size: 100%
+
+@media(min-width: 577px)
+  .contact-content
+    font-size: 150%
+
+body
+  width: 100vw
   #root
     width: 100%
-    height: 100vh
     
+    .animate-delay
+      transition-delay: 1s
+
     //导航栏
     .navigation-shadow
       display: flex
@@ -32,10 +129,16 @@ body
         color: #2196f3
       .navigation-list
         display: flex
-        margin-right: 4rem
+        margin-right: 2rem
         font-size: 120%
-        div
-          margin-right: 0.75rem
+        .nav-name
+          display: flex
+
+          div
+            margin-right: 0.75rem
+        img
+          width: 32px
+          height: 32px
     .navigation
       display: flex
       justify-content: space-between
@@ -57,15 +160,24 @@ body
         color: #2196f3
       .navigation-list
         display: flex
-        margin-right: 4rem
+        margin-right: 2rem
         font-size: 120%
-        div
-          margin-right: 0.75rem
+        align-items: center
+        .nav-name
+          display: flex
+
+          div
+            margin-right: 0.75rem
+
+        img
+          width: 32px
+          height: 32px
+          // color: #ffffff
     .logo
         display: flex
         align-items: center
         padding: 0.75rem
-        margin-left: 4rem
+        margin-left: 2rem
         .logo-image
           height: 64px
           width: 64px
@@ -90,7 +202,7 @@ body
 
         div
           text-align: center
-          font-size: 200%
+          // font-size: 200%
           margin-bottom: 1rem
           color: #ffffff
         slogan
@@ -104,16 +216,17 @@ body
       justify-content: center
       padding: 0.75rem
       font-size: 200%
+      color: $font-black
 
     //部门介绍页面
     department
       display: block
-      height: 100vh
+      // height: 100vh
       width: 100%
       background-color: #f8fafe
 
       .depart-container
-        margin: 2rem
+        margin: 2rem 2rem 0 2rem 
         display: flex
         flex-wrap: wrap
         justify-content: space-around
@@ -121,9 +234,8 @@ body
 
         .group
           display: block
-          width: 360px
           height: 272px
-          margin: 1.2rem
+          margin: 1rem
           transition: all .3s ease-out 0s
           background: #fff
 
@@ -157,6 +269,24 @@ body
       height: 100vh
       width: 100%
 
+      carousel
+        display: flex
+        align-items: center
+        width: 100%
+        height: calc(100vh - 69px)
+        .carousel-container
+          display: flex
+          justify-content: space-around
+          padding: 2rem
+
+          .activity-pic
+            display: flex
+            justify-content: center
+            width: 50%
+
+            img
+              width: 100%
+
     //科协历届页面
     history
       display: block
@@ -182,10 +312,11 @@ body
          background-color: #f8fafe
 
         div
-            font-size: 120%
             display: block
-            margin-right: 2rem
-        
+
+        .qrcode:nth-child(1)
+          margin-right: 2rem
+
         .qrcode
 
           div
